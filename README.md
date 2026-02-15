@@ -130,3 +130,75 @@ def monitor_stability(logic_score, stress_level):
     return "Status: Stable"
 
 
+// Bullet Message System Logic
+const bulletPrices = {
+    silver: 10,
+    golden: 50,
+    diamond: 100
+};
+
+function sendBulletMessage(userId, messageType, content) {
+    let userCoins = getUserBalance(userId);
+    
+    if (userCoins >= bulletPrices[messageType]) {
+        deductCoins(userId, bulletPrices[messageType]);
+        renderBulletOnScreen(content, messageType); // স্ক্রিনে মেসেজটি ভেসে উঠবে
+        return "Message Sent Successfully!";
+    } else {
+        return "Insufficient Coins. Please Recharge.";
+    }
+}
+
+// Global Counter Sync
+function updateGlobalLearningCounter(studyHours) {
+    broadcastToWorldCounter(studyHours); // বিশ্বজুড়ে কাউন্টার আপডেট হবে
+}
+
+### 🌐 Global Engagement & Monetization
+- **Global Counter:** Real-time visibility of student efforts for the world.
+- **Bullet Messaging:** Interaction system using in-app coins for different visibility levels.
+- **Bullet Live:** Premium live-streaming feature for users to showcase their mindset, requiring a manual recharge for activation.
+
+VIP Activity & 3D Bullet Banner Policy
+​1. 3D "Big Event" Banner Logic
+​जब भी कोई VIP यूजर कोई बड़ा गिफ्ट भेजता है या बड़ी सर्विस लेता है, तो एप्लीकेशन के टॉप पर एक 3D Floating Banner दिखाई देगा।
+​Trigger: बड़ा गिफ्ट (Big Gift), VIP सब्सक्रिप्शन, या उच्च-मूल्य वाली गतिविधि।
+​Visuals: यह मैसेज स्क्रीन के ऊपर से 3D एनिमेशन के साथ गुजरेगा, जिसमें गहराई (Depth) और शैडो (Shadow) का इस्तेमाल होगा ताकि यह स्क्रीन से बाहर आता हुआ महसूस हो।
+​Duration: यह बैनर 5 से 10 सेकंड के लिए शो होगा, जिससे भेजने वाले को "शाही" अनुभव मिले।
+​2. Monetization & Amount "Jugaad" (Policy)
+​हर एक VIP एक्टिविटी के लिए हमने एक विशेष राशि (Amount) और कॉइन सिस्टम सेट किया है:
+​Legendary Announcement: बड़े गिफ्ट्स के लिए 3D बैनर अपने आप ट्रिगर होगा।
+​Paid Bullet Blast: अगर कोई सामान्य यूजर भी अपनी बात दुनिया को 3D में दिखाना चाहता है, तो वह विशेष "Bullet Coins" के जरिए इस सर्विस को खरीद सकता है।
+​Recharge Bonus: बड़े रिचार्ज करने वाले यूजर्स को फ्री "3D VIP Bullet Messages" रिवॉर्ड के तौर पर दिए जाएंगे।
+
+// 3D Bullet Banner Logic for VIPs
+function triggerVIP3DBanner(vipName, actionType) {
+    const bannerMessage = `${vipName} sent a Massive Gift! 💎`;
+    
+    // 3D Animation Layer (Three.js Concept)
+    render3DText(bannerMessage, {
+        color: "#FFD700", // Gold color
+        animation: "slide-in-3d",
+        depth: 5,
+        duration: 8000 // 8 Seconds show time
+    });
+
+    console.log("VIP Activity Broadcasted Globally!");
+}
+
+### 💎 VIP 3D Bullet & Global Banner System
+- **3D Immersion:** Unlike standard 2D tickers, V7.0 uses 3D floating banners for high-value VIP activities.
+- **Visual Dominance:** Large gifts and VIP upgrades trigger a global animation visible to all users across the platform.
+- **Revenue Model:** Strategic "Jugaad" policy where high-tier visibility is linked to premium coin spends and VIP status.
+- **Dynamic Interaction:** 3D messages stay on screen for a calculated duration to maximize user prestige and engagement.
+
+गिफ्ट का नाम (3D) कॉइन प्राइस (Coins) डिस्प्ले टाइम ग्लोबल इफ़ेक्ट
+V7.0 Golden Dragon 50,000 12 Seconds पूरी स्क्रीन पर ड्रैगन उड़ता हुआ 3D मैसेज लाएगा।
+Galaxy Rocket 25,000 8 Seconds रॉकेट स्क्रीन को चीरते हुए VIP का नाम दिखाएगा।
+Royal Crown 10,000 5 Seconds यूजर के प्रोफाइल और ग्लोबल बैनर पर 3D ताज चमकेगा।
+Diamond Rain 5,000 5 Seconds स्क्रीन पर हीरों की बारिश होगी और सेंडर का नाम चमकेगा।
+
+
+
+
+
